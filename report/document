@@ -1,0 +1,9 @@
+\subsection{Markov Decision Process}
+
+A Markov chain is a stochastic model meaning that it randomly determined process. The chain describes a sequence of possible events in which the probability of each event depends only on the state attained in the previous event. 
+
+\subsection{Reinforcement Algoritm}
+
+\subsection{Q-Learning}
+
+Q-learning is a model free reinforcement algorithm. In q-learning, there is one q value for each possible action you could take given a state.
