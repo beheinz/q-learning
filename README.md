@@ -1,6 +1,21 @@
 # Q-Learning for Path Finding
 
 <p float="left">
-  <img src="/images/5000a.png" width="100" />
-  <img src="/images/5000b.png" width="100" /> 
+  <img src="/images/5000a.png" width="250" />
+  <img src="/images/5000b.png" width="200" /> 
+</p>
+
+<p float="left">
+  <img src="/images/7500a.png" width="250" />
+  <img src="/images/7500b.png" width="200" /> 
+</p>
+
+<p float="left">
+  <img src="/images/10000a.png" width="250" />
+  <img src="/images/10000b.png" width="200" /> 
+</p>
+
+<p float="left">
+  <img src="/images/25000a.png" width="250" />
+  <img src="/images/25000b.png" width="200" /> 
 </p>
