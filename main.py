@@ -45,16 +45,58 @@ def create_image(size, qagent, state_pairs):
 
         return [a, b]
 
-    w, h = 100*(size*2)-1, 100*(size*2)-1
+    scale = 100
+
+    w = int(scale*(size) + (scale/4)*(size-1))
+    print("w", w)
+    h = int(scale*(size) + (scale/4)*(size-1))
+    print("h", h)
+
     data = np.zeros((h, w, 3), dtype=np.uint8)
 
     for state in qagent.route:
+
         coords = state_to_coords(state, size)
-        data[coords[1]*100:coords[1]*100+100, coords[0]*100:coords[0]*100+100] = [0, 0 ,255]
+
+        if coords[1] % 2 == 0:
+            x = int(coords[1]/2*(scale)) + int(coords[1]/2*(scale/4))
+        else:
+            x = int((coords[1]/2)+0.5)*(scale) + int((coords[1]/2)-0.5)*(scale/4)
+
+        if coords[0] % 2 == 0:
+            y = int(coords[0]/2*(scale)) + int(coords[0]/2*(scale/4))
+        else:
+            y = int((coords[0]/2)+0.5)*(scale) + int((coords[0]/2)-0.5)*(scale/4)
+
+        print(x, x+scale, y, y+scale)
+
+        data[x:x+scale, y:y+scale] = [0, 0 ,255]
 
     for pair in state_pairs:
+
         coords = state_pair_to_coords(pair, size)
-        data[coords[1]*100:coords[1]*100+100, coords[0]*100:coords[0]*100+100] = [255, 255 ,255]
+
+        if coords[1] % 2 == 0:
+            x = int(coords[1]/2*(scale)) + int(coords[1]/2*(scale/4))
+        else:
+            x = int((coords[1]/2)+0.5)*(scale) + int((coords[1]/2)-0.5)*(scale/4)
+
+        if coords[0] % 2 == 0:
+            y = int(coords[0]/2*(scale)) + int(coords[0]/2*(scale/4))
+        else:
+            y = int((coords[0]/2)+0.5)*(scale) + int((coords[0]/2)-0.5)*(scale/4)
+
+        print(int(x), int(x+scale/4), int(y), int(y+scale/4))
+
+        if abs(pair[0] - pair[1]) == 1:
+            length_x = scale
+            length_y = scale / 4
+
+        else:
+            length_x = scale / 4
+            length_y = scale
+
+        data[int(x):int(x+length_x), int(y):int(y+length_y)] = [255, 255 ,255]
 
     #data[0:1600, 0:1600] = [255, 0, 0] # red patch in upper left
     img = Image.fromarray(data, 'RGB')
@@ -67,7 +109,14 @@ def main():
     size = 16 # min size is 3
     gamma = 0.75 # discount factor
     alpha = 0.9 # learning rate
-    state_pairs = [[7,8],[23,24],[39,40],[55,56],[71,72],[87,88],[103,104]]
+
+    line_a = [[7,8],[23,24],[39,40],[55,56],[71,72],[87,88],[103,104],[119,120],[135,136],[151,152],[151,167],[150,166]]
+    line_b = [[38,54],[36,52],[37,53],[39,55]]
+    line_c = [[106,122],[105,121],[104,120],[107,123],[108,124]]
+    line_d = [[63,79],[62,78],[61,77],[60,76],[59,75],[58,74]]
+
+    state_pairs = line_a + line_b + line_c + line_d
+
     Q = np.array(np.zeros([size*size,size*size]))
 
     states = setup_states(size)
@@ -78,7 +127,7 @@ def main():
     rewards.setup_state_pairs(state_pairs)
 
     qagent = QAgent(alpha, gamma, states, actions, rewards.rewards, Q, size)
-    qagent.training(3, 15, 25000)
+    qagent.training(7, 15, 25000)
 
     create_image(size, qagent, state_pairs)
 
