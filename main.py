@@ -108,22 +108,46 @@ def create_image(size, qagent, state_pairs):
     img = Image.fromarray(data, 'RGB')
     img.save('my.png')
 
+def generate_line(pair, length, size):
+
+    line_pairs = []
+
+    # verticle
+    if abs(pair[0] - pair[1]) == 1:
+        for i in range(length):
+            new_pair = [pair[0] + i*size, pair[1] + i*size]
+            line_pairs.append(new_pair)
+    else:
+        for i in range(length):
+            new_pair = [pair[0] + i, pair[1] + i]
+            line_pairs.append(new_pair)
+
+    return line_pairs
+
 
 def main():
 
     # setup variables
-    size = 16 # min size is 3
+    size = 64 # min size is 3
     gamma = 0.75 # discount factor
     alpha = 0.9 # learning rate
 
     # barrier lines that make up state state_pairs
     # state pairs are two states besides each other than have a barrier between them
-    line_a = [[7,8],[23,24],[39,40],[55,56],[71,72],[87,88],[103,104],[119,120],[135,136],[151,152],[151,167],[150,166]]
-    line_b = [[38,54],[36,52],[37,53],[39,55]]
-    line_c = [[106,122],[105,121],[104,120],[107,123],[108,124]]
-    line_d = [[63,79],[62,78],[61,77],[60,76],[59,75],[58,74]]
+    #line_a = [[7,8],[23,24],[39,40],[55,56],[71,72],[87,88],[103,104],[119,120],[135,136],[151,152],[151,167],[150,166]]
+    #line_b = [[38,54],[36,52],[37,53],[39,55]]
+    #line_c = [[106,122],[105,121],[104,120],[107,123],[108,124]]
+    #line_d = [[63,79],[62,78],[61,77],[60,76],[59,75],[58,74]]
 
-    state_pairs = line_a + line_b + line_c + line_d
+    #state_pairs = line_a + line_b + line_c + line_d
+    line_a = generate_line([10,11], 30, size)
+    line_b = generate_line([1361,1425], 25, size)
+    line_c = generate_line([687,688], 50, size)
+
+
+    state_pairs = line_a + line_b + line_c
+
+
 
     # blank table of q values
     Q = np.array(np.zeros([size*size,size*size]))
@@ -136,7 +160,7 @@ def main():
     rewards.setup_state_pairs(state_pairs)
 
     qagent = QAgent(alpha, gamma, states, actions, rewards.rewards, Q, size)
-    qagent.training(7, 15, 25000)
+    qagent.training(0, 4095, 1000000)
 
     create_image(size, qagent, state_pairs)
 
