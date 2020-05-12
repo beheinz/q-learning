@@ -1,5 +1,5 @@
 # Q-Learning for Path Finding
 
 <p align="center">
-	<img src="./img/my.png" width="750">
+	<img src="./images/my.png" width="750">
 </p>
