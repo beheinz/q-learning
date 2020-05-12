@@ -58,11 +58,13 @@ def create_image(size, qagent, state_pairs):
 
         coords = state_to_coords(state, size)
 
+        # find correct pixel placement for x
         if coords[1] % 2 == 0:
             x = int(coords[1]/2*(scale)) + int(coords[1]/2*(scale/4))
         else:
             x = int((coords[1]/2)+0.5)*(scale) + int((coords[1]/2)-0.5)*(scale/4)
 
+        # find correct pixel placement for y
         if coords[0] % 2 == 0:
             y = int(coords[0]/2*(scale)) + int(coords[0]/2*(scale/4))
         else:
@@ -76,11 +78,13 @@ def create_image(size, qagent, state_pairs):
 
         coords = state_pair_to_coords(pair, size)
 
+        # find the correct pixel placement for x
         if coords[1] % 2 == 0:
             x = int(coords[1]/2*(scale)) + int(coords[1]/2*(scale/4))
         else:
             x = int((coords[1]/2)+0.5)*(scale) + int((coords[1]/2)-0.5)*(scale/4)
 
+        # find correct pixel placement for y
         if coords[0] % 2 == 0:
             y = int(coords[0]/2*(scale)) + int(coords[0]/2*(scale/4))
         else:
@@ -88,20 +92,22 @@ def create_image(size, qagent, state_pairs):
 
         print(int(x), int(x+scale/4), int(y), int(y+scale/4))
 
+        # if a horizontal line
         if abs(pair[0] - pair[1]) == 1:
             length_x = scale
             length_y = scale / 4
 
+        # verticle line
         else:
             length_x = scale / 4
             length_y = scale
 
+        # set to red
         data[int(x):int(x+length_x), int(y):int(y+length_y)] = [255, 255 ,255]
 
-    #data[0:1600, 0:1600] = [255, 0, 0] # red patch in upper left
     img = Image.fromarray(data, 'RGB')
     img.save('my.png')
-    #img.show()
+
 
 def main():
 
@@ -110,6 +116,8 @@ def main():
     gamma = 0.75 # discount factor
     alpha = 0.9 # learning rate
 
+    # barrier lines that make up state state_pairs
+    # state pairs are two states besides each other than have a barrier between them
     line_a = [[7,8],[23,24],[39,40],[55,56],[71,72],[87,88],[103,104],[119,120],[135,136],[151,152],[151,167],[150,166]]
     line_b = [[38,54],[36,52],[37,53],[39,55]]
     line_c = [[106,122],[105,121],[104,120],[107,123],[108,124]]
@@ -117,6 +125,7 @@ def main():
 
     state_pairs = line_a + line_b + line_c + line_d
 
+    # blank table of q values
     Q = np.array(np.zeros([size*size,size*size]))
 
     states = setup_states(size)

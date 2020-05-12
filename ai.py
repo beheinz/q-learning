@@ -1,8 +1,10 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
 
 class QAgent():
 
-    # Initialize alpha, gamma, states, actions, rewards, and Q-values
+    # initialize alpha, gamma, states, actions, rewards, and Q-values
     def __init__(self, alpha, gamma, states, actions, rewards, Q, size):
 
         self.gamma = gamma
@@ -64,48 +66,28 @@ class QAgent():
 
         next_state = start_state
 
-        # Get the route
+        # get the route
         self.get_optimal_route(start_state, end_state, next_state, route, self.Q, iterations)
 
-    # Get the optimal route from q values
+    # get the optimal route from q values
     def get_optimal_route(self, start_state, end_state, next_state, route, Q, iterations):
-
-
-
-        #print()
-        #print("Q Table:")
-        #print(Q)
 
         while(next_state != end_state):
 
-            #print("Starting state:", start_state)
-
             next_state = np.argmax(Q[start_state,])
-
-            #print("Q Table:", Q[start_state,])
-
-            #print("Next state:", next_state)
 
             route.append(next_state)
             start_state = next_state
 
+            # if route gets stuck
             if len(route) > 999:
                 break
-            #print()
 
-        #print()
         print("Route:", route)
 
         self.route = route
 
-        #self.create_td_graph(iterations, 50)
-
-    def get_route():
-
-        return self.route
-
-
-
+        self.create_td_graph(iterations, 50)
 
     def create_td_graph(self, iterations, nBins):
 
@@ -120,10 +102,11 @@ class QAgent():
             x.append(i*bin_size)
             totals.append(sum(self.q_change[i*bin_size:(i*bin_size+bin_size)])/bin_size)
 
-
-        #print(sum(totals))
-
-        #print(sum(self.q_change) / int(bin_size))
-
         plt.plot(x, totals)
+
+        plt.xlabel('Iteration', fontsize=10)
+        plt.ylabel('Average temporal difference', fontsize=10)
+
+        plt.savefig('foo.png')
+
         plt.show()

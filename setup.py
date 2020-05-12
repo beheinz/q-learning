@@ -36,8 +36,6 @@ class Rewards():
 
         print("setup rewards")
 
-
-
         print("Corners:",self.top_left, self.top_right, self.bottom_left, self.bottom_right)
 
         self.create_rewards()
