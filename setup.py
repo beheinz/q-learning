@@ -34,15 +34,15 @@ class Rewards():
 
     def setup_rewards(self, size):
 
-        print("setup rewards")
+        #print("setup rewards")
 
-        print("Corners:",self.top_left, self.top_right, self.bottom_left, self.bottom_right)
+        print("Corner states:",self.top_left, self.top_right, self.bottom_left, self.bottom_right)
 
         self.create_rewards()
 
     def create_rewards(self):
 
-        print("create rewards")
+        #print("create rewards")
 
         for state in range(self.size*self.size):
 

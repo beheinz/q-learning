@@ -128,7 +128,7 @@ def generate_line(pair, length, size):
 def main():
 
     # setup variables
-    size = 64 # min size is 3
+    size = 32 # min size is 3
     gamma = 0.75 # discount factor
     alpha = 0.9 # learning rate
 
@@ -140,13 +140,17 @@ def main():
     #line_d = [[63,79],[62,78],[61,77],[60,76],[59,75],[58,74]]
 
     #state_pairs = line_a + line_b + line_c + line_d
-    line_a = generate_line([10,11], 30, size)
-    line_b = generate_line([1361,1425], 25, size)
-    line_c = generate_line([687,688], 50, size)
 
 
-    state_pairs = line_a + line_b + line_c
+    line_a = generate_line([4,5], 18, size)
+    line_b = generate_line([431,432], 19, size)
+    line_c = generate_line([395,427], 15, size)
+    line_d = generate_line([694,726], 10, size)
 
+
+    state_pairs = line_a + line_b + line_c + line_d
+
+    print("Grid barrier lines created:", len(state_pairs))
 
 
     # blank table of q values
@@ -160,8 +164,11 @@ def main():
     rewards.setup_state_pairs(state_pairs)
 
     qagent = QAgent(alpha, gamma, states, actions, rewards.rewards, Q, size)
-    qagent.training(0, 4095, 1000000)
 
+    print("Training model")
+    qagent.training(0, 1023, 100000)
+
+    print("Creating image")
     create_image(size, qagent, state_pairs)
 
 if __name__ == "__main__":

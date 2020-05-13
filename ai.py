@@ -31,8 +31,8 @@ class QAgent():
         # explore environment
         for i in range(iterations):
 
-            if i % 1000 == 0:
-                print("Running iteration", i, "...")
+            if i % 100 == 0:
+                print("Iteration:", i, int(i / iterations * 100), "% complete.", end="\r", flush=True)
 
             # set current state to random state
             current_state = np.random.randint(0,(self.size*self.size))
@@ -72,6 +72,8 @@ class QAgent():
     # get the optimal route from q values
     def get_optimal_route(self, start_state, end_state, next_state, route, Q, iterations):
 
+        print("Finding optimal route")
+
         while(next_state != end_state):
 
             next_state = np.argmax(Q[start_state,])
@@ -83,13 +85,14 @@ class QAgent():
             if len(route) > 999:
                 break
 
-        print("Route:", route)
 
         self.route = route
 
         self.create_td_graph(iterations, 50)
 
     def create_td_graph(self, iterations, nBins):
+
+        print("Generating graph")
 
         bin_size = iterations / nBins
 
