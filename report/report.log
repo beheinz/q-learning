@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.5.13)  13 MAY 2020 13:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.8.6)  7 AUG 2020 00:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -107,61 +107,26 @@ Package caption Info: float package is loaded.
 \c@subfigure=\count92
 \c@subtable=\count93
 )
-(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
-Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count94
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip43
-
-(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count95
+\c@ALC@unique=\count94
+\c@ALC@line=\count95
+\c@ALC@rem=\count96
+\c@ALC@depth=\count97
+\ALC@tlm=\skip43
+\algorithmicindent=\skip44
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+\@float@every@algorithm=\toks18
+\c@algorithm=\count98
 )
-(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
-Package: relsize 2013/03/29 ver 4.1
-)
-\skiptotal=\skip44
-\skiplinenumber=\skip45
-\skiprule=\skip46
-\skiphlne=\skip47
-\skiptext=\skip48
-\skiplength=\skip49
-\algomargin=\skip50
-\skipalgocfslide=\skip51
-\algowidth=\dimen120
-\inoutsize=\dimen121
-\inoutindent=\dimen122
-\interspacetitleruled=\dimen123
-\interspacealgoruled=\dimen124
-\interspacetitleboxruled=\dimen125
-\algocf@ruledwidth=\skip52
-\algocf@inoutbox=\box28
-\algocf@inputbox=\box29
-\AlCapSkip=\skip53
-\AlCapHSkip=\skip54
-\algoskipindent=\skip55
-\algocf@nlbox=\box30
-\algocf@hangingbox=\box31
-\algocf@untilbox=\box32
-\algocf@skipuntil=\skip56
-\algocf@capbox=\box33
-\algocf@lcaptionbox=\skip57
-\algoheightruledefault=\skip58
-\algoheightrule=\skip59
-\algotitleheightruledefault=\skip60
-\algotitleheightrule=\skip61
-\c@algocfline=\count96
-\c@algocfproc=\count97
-\c@algocf=\count98
-\algocf@algoframe=\box34
-\algocf@algobox=\box35
-) (./report.aux)
+(./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -180,16 +145,16 @@ LaTeX Font Info:    ... okay on input line 14.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count99
-\scratchdimen=\dimen126
-\scratchbox=\box36
+\scratchdimen=\dimen120
+\scratchbox=\box28
 \nofMPsegments=\count100
 \nofMParguments=\count101
-\everyMPshowfont=\toks18
+\everyMPshowfont=\toks19
 \MPscratchCnt=\count102
-\MPscratchDim=\dimen127
+\MPscratchDim=\dimen121
 \MPnumerator=\count103
 \makeMPintoPDFobject=\count104
-\everyMPtoPDFconversion=\toks19
+\everyMPtoPDFconversion=\toks20
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -317,53 +282,48 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 59.
-
-Overfull \hbox (30.0pt too wide) in paragraph at lines 72--95
-$[]$ 
- []
-
-[3]
-<./images/100kb.png, id=29, 3989.90625pt x 3989.90625pt>
+ [3]
+<./images/100kb.png, id=28, 3989.90625pt x 3989.90625pt>
 File: ./images/100kb.png Graphic file (type png)
 <use ./images/100kb.png>
-Package pdftex.def Info: ./images/100kb.png  used on input line 107.
+Package pdftex.def Info: ./images/100kb.png  used on input line 105.
 (pdftex.def)             Requested size: 128.0374pt x 128.03271pt.
-<./images/100ka.png, id=30, 462.528pt x 346.896pt>
+<./images/100ka.png, id=29, 462.528pt x 346.896pt>
 File: ./images/100ka.png Graphic file (type png)
 <use ./images/100ka.png>
-Package pdftex.def Info: ./images/100ka.png  used on input line 112.
+Package pdftex.def Info: ./images/100ka.png  used on input line 110.
 (pdftex.def)             Requested size: 184.9429pt x 138.7083pt.
-<./images/250kb.png, id=31, 3989.90625pt x 3989.90625pt>
+<./images/250kb.png, id=30, 3989.90625pt x 3989.90625pt>
 File: ./images/250kb.png Graphic file (type png)
 <use ./images/250kb.png>
-Package pdftex.def Info: ./images/250kb.png  used on input line 122.
+Package pdftex.def Info: ./images/250kb.png  used on input line 120.
 (pdftex.def)             Requested size: 128.0374pt x 128.03271pt.
-<./images/250ka.png, id=32, 462.528pt x 346.896pt>
+<./images/250ka.png, id=31, 462.528pt x 346.896pt>
 File: ./images/250ka.png Graphic file (type png)
 <use ./images/250ka.png>
-Package pdftex.def Info: ./images/250ka.png  used on input line 127.
+Package pdftex.def Info: ./images/250ka.png  used on input line 125.
 (pdftex.def)             Requested size: 184.9429pt x 138.7083pt.
 File: ./images/1ma.png Graphic file (type png)
 <use ./images/1ma.png>
-Package pdftex.def Info: ./images/1ma.png  used on input line 137.
+Package pdftex.def Info: ./images/1ma.png  used on input line 135.
 (pdftex.def)             Requested size: 128.0374pt x 128.03271pt.
-<./images/1mb.png, id=33, 462.528pt x 346.896pt>
+<./images/1mb.png, id=32, 462.528pt x 346.896pt>
 File: ./images/1mb.png Graphic file (type png)
 <use ./images/1mb.png>
-Package pdftex.def Info: ./images/1mb.png  used on input line 142.
+Package pdftex.def Info: ./images/1mb.png  used on input line 140.
 (pdftex.def)             Requested size: 184.9429pt x 138.7083pt.
  [4
 
  <./images/100kb.png (PNG copy)> <./images/100ka.png> <./images/250kb.png (PNG 
 copy)> <./images/250ka.png> <./images/1mb.png>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 4150 strings out of 494847
- 65691 string characters out of 6179080
- 137447 words of memory out of 5000000
- 7426 multiletter control sequences out of 15000+600000
- 8241 words of font info for 29 fonts, out of 8000000 for 9000
+ 3381 strings out of 494847
+ 52493 string characters out of 6179081
+ 115054 words of memory out of 5000000
+ 6666 multiletter control sequences out of 15000+600000
+ 7895 words of font info for 28 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 42i,15n,40p,534b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,7n,40p,534b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-d
@@ -373,12 +333,11 @@ e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (4 pages, 508691 bytes).
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on report.pdf (4 pages, 500566 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

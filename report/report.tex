@@ -5,7 +5,7 @@
 \usepackage[parfill]{parskip}
 \graphicspath{ {./images/} }
 \usepackage{subcaption}
-\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{,algorithmic,algorithm}
 
 %opening
 \title{Implementing Q-Learning for Path Finding}
@@ -69,29 +69,27 @@ where
 
 This implementation is fully scalable, having been tested up to 32x32 pixel image sizes. In a 32x32 grid there are 1,024 states and 1,024 actions, totalling 1,048,576 state-action pairs. A reward of 1 will be given to the agent if a state is directly reachable from the current state. The destination state will have a reward of 999. All other state-action pairs have a reward of 0. The algorithm for training the agent and calculating the Q table can be seen below.
 
-\begin{algorithm}[H]
+\begin{algorithm}
+	\renewcommand\thealgorithm{}
+	\caption{A numberless algorithm}
+\begin{algorithmic}[H]
 
-	\SetAlgoLined
+\FOR {N}
+\STATE $s\gets random State$
+\FOR {each a from s}
+\IF{$r_{s,a} >0$}
+\STATE add to list of playable actions
+\ENDIF
+\STATE set $s_{t+1}$ to state from random action choice
+\STATE calculate temporal difference
+\STATE update $q$ value for $s_t$,$a_t$
+\ENDFOR
+\ENDFOR
 
-	
-	\For{N}
-	{
-		set $s$ to random state\;
-		\For{each $a$ from $s$}
-		{
-			\If{$r_{s,a}>0$}
-			{
-				add to list of playable actions\;
-			}
-			set $s_{t+1}$ to state from random action choice\;
-			calculate temporal difference\;
-			update q value for $s_t, a_t$\;
-		
-		}
-	}
+\caption{Updating Q-Values}
 
-	\caption{Updating Q values}
-
+\end{algorithmic}
+\addtocounter{algorithm}{-1}
 \end{algorithm}
 
 
